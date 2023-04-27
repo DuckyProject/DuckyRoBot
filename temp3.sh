@@ -11,6 +11,8 @@ fi
 
 wget -O /data/ducky_bot/client https://github.com/DuckyProject/DuckyRoBot/releases/latest/download/DuckyClient-${aarch}
 
+chmod +x /data/ducky_bot/client
+
 cat >/etc/systemd/system/ducky_bot.service <<EOF
 [Unit]
 Description=ducky_bot

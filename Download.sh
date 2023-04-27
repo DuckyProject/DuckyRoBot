@@ -7,5 +7,4 @@ else
     exit 1
 fi
 
-#wget -O /DuckyClient/client https://github.com/DuckyProject/DuckyRoBot/releases/latest/download/DuckyClient-${aarch}
-wget -O /DuckyClient/client https://pan.duckawa.me/f/nmyCQ/main%20%287%29.txt
+wget -O /DuckyClient/client https://github.com/DuckyProject/DuckyRoBot/releases/latest/download/DuckyClient-${aarch}

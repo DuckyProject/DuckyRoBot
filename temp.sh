@@ -9,7 +9,7 @@ else
     exit 1
 fi
 
-wget -O /DuckyClient/client https://github.com/DuckyProject/DuckyRoBot/releases/latest/download/DuckyClient-${aarch}
+wget -O /data/ducky_bot/client https://github.com/DuckyProject/DuckyRoBot/releases/latest/download/DuckyClient-${aarch}
 
 cat >/etc/systemd/system/ducky_bot.service <<EOF
 [Unit]
@@ -33,5 +33,5 @@ StandardError=syslog
 WantedBy=multi-user.target
 EOF
 
-systemdctl enable ducky_bot
-systemdctl restart ducky_bot
+systemctl enable ducky_bot
+systemctl restart ducky_bot

@@ -1,7 +1,7 @@
 echo "[Info] 欢迎使用 @DuckyRoBot 一键安装脚本！官方文档：https://docs.duckybot.org"
 echo "[Info] 5 秒后开始安装，您可以按下 Ctrl+C 终止本脚本！"
 sleep 5
-echo "[Info] 正在终止 R探长 ..."
+echo "[Info] 正在终止 R探长 (如有报错请忽略)..."
 ps -ef | grep r_client.jar | grep -v grep | awk '{print $2}' | xargs kill -9  
 if [ `uname -m` = "x86_64" ] ; then
 	    aarch=amd64
@@ -12,6 +12,8 @@ else
     exit 1
 fi
 echo "[Info] 正在下载 Ducky Client，架构：$aarch ..."
+mkdir /data
+mkdir /data/ducky_bot
 wget -O /data/ducky_bot/client https://github.com/DuckyProject/DuckyRoBot/releases/latest/download/DuckyClient-${aarch}
 echo "[Info] 下载完成！"
 echo "[Info] 正在赋予执行权限..."
@@ -43,7 +45,8 @@ EOF
 systemctl enable ducky_bot
 echo "[Info] 写入进程守护完成！"
 echo "[Info] 正在创建 Conf 文件..."
-
+cat >/data/ducky_bot/conf.ini <<EOF
+EOF
 echo "##### 客户端基本配置 #####" > "/data/ducky_bot/conf.ini"
 echo "[Client]" > "/data/ducky_bot/conf.ini"
 echo "User = $1" > "/data/ducky_bot/conf.ini"

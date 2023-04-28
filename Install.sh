@@ -48,13 +48,13 @@ echo "[Info] 正在创建 Conf 文件..."
 cat >/data/ducky_bot/conf.ini <<EOF
 EOF
 echo "##### 客户端基本配置 #####" > "/data/ducky_bot/conf.ini"
-echo "[Client]" > "/data/ducky_bot/conf.ini"
-echo "User = $1" > "/data/ducky_bot/conf.ini"
-echo "Key = $2" > "/data/ducky_bot/conf.ini"
-echo "Ip =" > "/data/ducky_bot/conf.ini"
-echo "Port = $3" > "/data/ducky_bot/conf.ini"
-echo "" > "/data/ducky_bot/conf.ini"
-echo "##### 甲骨文账号配置 #####" > "/data/ducky_bot/conf.ini"
+echo "[Client]" >> "/data/ducky_bot/conf.ini"
+echo "User = $1" >> "/data/ducky_bot/conf.ini"
+echo "Key = $2" >> "/data/ducky_bot/conf.ini"
+echo "Ip =" >> "/data/ducky_bot/conf.ini"
+echo "Port = $3" >> "/data/ducky_bot/conf.ini"
+echo "" >> "/data/ducky_bot/conf.ini"
+echo "##### 甲骨文账号配置 #####" >> "/data/ducky_bot/conf.ini"
 echo "[Info] 请手动打开 /data/ducky_bot/conf.ini 添加配置！"
 
 

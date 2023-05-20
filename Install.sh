@@ -1,5 +1,5 @@
 
-echo "[Info] [dem] 欢迎使用 @DuckyRoBot 一键安装脚本！官方文档：https://docs.duckybot.org"
+echo "[Info] [dem] 欢迎使用 @DuckyRoBot 一键安装脚本！官方文档：https://docs.duckybot.me"
 echo "[Info] 5 秒后开始安装，您可以按下 Ctrl+C 终止本脚本！"
 sleep 5
 echo "[Info] 正在终止 R探长 (如有报错请忽略)..."

@@ -28,7 +28,7 @@ echo "[Info] 正在写入进程守护..."
 cat >/etc/systemd/system/ducky_bot.service <<EOF
 [Unit]
 Description=ducky_bot
-Documentation=https://docs.duckybot.org
+Documentation=https://docs.duckybot.me
 After=network.target
 After=mysqld.service
 Wants=network.target

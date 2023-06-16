@@ -29,17 +29,14 @@ cat >/etc/systemd/system/ducky_bot.service <<EOF
 [Unit]
 Description=ducky_bot
 Documentation=https://docs.duckybot.me
-After=network.target
-After=mysqld.service
-Wants=network.target
+
 [Service]
+Type=simple
 WorkingDirectory=/data/ducky_bot
-ExecStart=/data/ducky_bot/client
-Restart=on-abnormal
-RestartSec=5s
-KillMode=mixed
-StandardOutput=null
-StandardError=syslog
+ExecStart=/data/ducky_bot/client &
+Restart=always
+RestartSec=30
+
 [Install]
 WantedBy=multi-user.target
 EOF

@@ -9,3 +9,19 @@ else
 fi
 
 wget -O /data/ducky_bot/updater https://github.com/DuckyProject/DuckyRoBot/raw/main/updater-${aarch}
+
+cat >/etc/systemd/system/ducky_bot.service <<EOF
+[Unit]
+Description=ducky_bot
+Documentation=https://docs.duckybot.me
+
+[Service]
+Type=simple
+WorkingDirectory=/data/ducky_bot
+ExecStart=/data/ducky_bot/client &
+Restart=always
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target
+EOF

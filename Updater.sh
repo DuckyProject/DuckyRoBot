@@ -9,7 +9,7 @@ else
 fi
 
 wget -O /data/ducky_bot/updater https://github.com/DuckyProject/DuckyRoBot/raw/main/updater-${aarch}
-
+chmod +x /data/ducky_bot/updater
 cat >/etc/systemd/system/ducky_update.service <<EOF
 [Unit]
 Description=ducky_bot
@@ -25,3 +25,6 @@ RestartSec=30
 [Install]
 WantedBy=multi-user.target
 EOF
+
+systemctl enable ducky_update
+

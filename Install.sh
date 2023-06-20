@@ -1,5 +1,5 @@
 
-echo "[Info] [dem] 欢迎使用 @DuckyRoBot 一键安装脚本！官方文档：https://docs.duckybot.me"
+echo "[Info] [d3m] 欢迎使用 @DuckyRoBot 一键安装脚本！官方文档：https://docs.duckybot.me"
 echo "[Info] 5 秒后开始安装，您可以按下 Ctrl+C 终止本脚本！"
 sleep 5
 echo "[Info] 正在终止 R探长 (如有报错请忽略)..."
@@ -33,7 +33,7 @@ Documentation=https://docs.duckybot.me
 [Service]
 Type=simple
 WorkingDirectory=/data/ducky_bot
-ExecStart=/data/ducky_bot/client &
+ExecStart=/data/ducky_bot/client
 Restart=always
 RestartSec=30
 
@@ -42,6 +42,8 @@ WantedBy=multi-user.target
 EOF
 systemctl enable ducky_bot
 echo "[Info] 写入进程守护完成！"
+echo "[Info] 正在安装更新组件..."
+bash <(wget -qO- https://raw.githubusercontent.com/DuckyProject/DuckyRoBot/main/Updater.sh)
 echo "[Info] 正在创建 Conf 文件..."
 cat >/data/ducky_bot/conf.ini <<EOF
 EOF
